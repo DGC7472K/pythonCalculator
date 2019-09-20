@@ -1,0 +1,2 @@
+# pythonCalculator
+Small python project
