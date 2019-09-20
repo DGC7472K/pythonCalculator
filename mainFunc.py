@@ -11,6 +11,7 @@ def startLine():
     else:
         print("Invalid response\nTry again..")
         startLine()
+
 #calculator function
 def equation1():
     num1 = float(input("Input a numeric value:\n"))
@@ -50,5 +51,7 @@ def equation1():
     else:
         print("Invalid input")
         equation1()
-#STARTS HERE
+        
+        
+#STARTS PROGRAM HERE
 startLine()
