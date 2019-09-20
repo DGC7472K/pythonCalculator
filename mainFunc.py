@@ -1,3 +1,5 @@
+import time
+
 #Introduction function
 def startLine():
     polar = input("Use calculator function? (input polar value)\n")
@@ -51,7 +53,54 @@ def equation1():
     else:
         print("Invalid input")
         equation1()
+
+#Home screen function
+def welcome():
+    print("Greetings!")
+    proceed = input("Press any key to continue..")
+    intro()
+    
+#Log in function
+def terminal():
+    password = 2019
+    tries = 0
+    count = 0
+    limit = 3
+    retry = False
+    lockout = False
+    while password != tries and not lockout:
+        if count < limit:
+            tries = int(input("Password: "))
+            if len(str(tries))<=4 and len(str(tries))>=4:
+                count = count + 1
+            else:
+                print("Incorrect number of digits entered")
+        else:
+              lockout = True
+    if lockout == True:
+        print("Three incorrect answers..")
+        time.sleep(2)
+        print("You have been locked out")
+    else:
+        print("Correct password")
+        print("Loading, please wait...")
+        time.sleep(5)
+        print("Hello!")
         
-        
-#STARTS PROGRAM HERE
+#Intro function        
+def intro():
+    polar = input("Login? ")
+    polarY = ["yes","y","yeah","ye","yess", "yee","yea","yesss"]
+    polarN = ["no","n","nah","nope"]
+    if polar.lower() in polarY:
+        print("You have 3 attempts")
+        terminal()
+    elif polar.lower() in polarN:
+        print("Ok, good bye!\n")
+        time.sleep(3)
+        welcome()
+    else:
+        print("Invalid response\nTry again..")
+        intro()
+welcome()
 startLine()
